@@ -1,0 +1,92 @@
+/* ----------- Custom CSS ----------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+    /* font-family: 'Roboto', sans-serif; */
+    background: #f2f2f2;
+}
+
+h1 {
+    font-size: 6em;
+}
+
+p, li {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  p {
+      font-size: 14px;
+  }
+}
+
+
+/* ----------- (BANNER) ----------- */
+
+/* ----------- Accordion styles ----------- */
+  .tabs {
+    overflow: hidden;
+  }
+  
+  .tab {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #dbdbdb59;
+  }
+
+  .tab:last-child {
+    border-bottom: none;
+  }
+
+  .tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    cursor: pointer;
+    opacity: 0.8;
+    /* Icon */
+  }
+  .tab-label:hover {
+    color: #9BDC50;
+  }
+  .tab-label::after {
+    transition: all .35s;
+  }
+  .tab-content {
+    max-height: 1px;
+    padding: 0 20px;
+    transition: all .35s;
+    opacity: 0.5;
+  }
+  .tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    cursor: pointer;
+  }
+  
+  #faqs input:checked + .tab-label {
+    background: transparent;
+    opacity: 1;
+    padding: 40px 0 10px 0;
+    font-weight: 500;
+    color: #9BDC50;
+  }
+  #faqs input:checked + .tab-label::after {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  #faqs input:checked ~ .tab-content {
+    max-height: 50%;
+    padding: 20px 0 40px 0;
+    opacity: 1;
+  }
+
+  #faqs input {
+      position: fixed;
+      opacity: 0;
+  }
